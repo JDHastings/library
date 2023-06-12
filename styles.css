@@ -1,0 +1,80 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    display: grid;
+    grid-template: 100px 1fr 50px / 1fr;
+    background-color: lightgrey;
+}
+
+header {
+    display: grid;
+    grid-template: 1fr / 1fr 100px 100px 40px;
+    align-items: center;
+    background-color: white;
+    gap: 10px;
+}
+
+header:first-child {
+    padding-left: 50px;
+}
+
+.main-content {
+    display: grid;
+    grid-template: 100px repeat(auto-fill, 200px) / repeat(5, 1fr);
+    gap: 25px;
+    justify-items: center;
+    padding: 25px;
+}
+
+.main-content>button {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    width: 100px;
+}
+
+.book {
+    display: grid;
+    grid-template: repeat(5, 1fr) / 1fr;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+    background-color: white;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.book>button,
+.read {
+    width: 100%;
+    height: 35px;
+}
+
+.read {
+    background-color: greenyellow;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    justify-self: center;
+}
+
+button {
+    height: 50px;
+    border: 0px;
+    border-radius: 15px;
+    background-color: lightgrey;
+    transition: background-color 0.5s ease-out;
+}
+
+button:hover {
+    background-color: grey;
+}

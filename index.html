@@ -19,15 +19,20 @@
             <div class="form-container">
                 <button class="add-book closed">+ Add Book</button>
                 <div class="form-popup closed-form">
-                    <form action="" class="container-form">
-                        <h1>Login</h1>
-                        <label for="email">Email</label>
-                        <input type="text" placeholder="Enter Email" name="email" required>
+                    <form action="" class="container-form" id="new-book">
+                        <label for="title">Book Title: </label>
+                        <input type="text" placeholder="Enter title" name="title" id="title" required>
 
-                        <label for="pwd">Password</label>
-                        <input type="password" placeholder="Enter Password" name="pwd" required>
+                        <label for="author">Author: </label>
+                        <input type="text" placeholder="Enter author" name="author" id="author" required>
 
-                        <button type="submit" class="btn">Login</button>
+                        <label for="pages">Number of Pages: </label>
+                        <input type="number" placeholder="Enter page count" name="pages" id="pages" required>
+
+                        <label for="read-status">Have you read the book</label>
+                        <input type="checkbox" name="read-status" id="read-status">
+
+                        <button type="submit">Add Book</button>
                     </form>
                 </div>
             </div>

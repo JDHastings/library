@@ -1,4 +1,4 @@
-let myLibrary = [];
+let myLibrary = [Book, Book, Book, Book, Book, Book];
 let removeButtons = document.querySelectorAll('.remove');
 let readButtons = document.querySelectorAll('.read');
 let unreadButtons = document.querySelectorAll('.unread');
@@ -10,8 +10,8 @@ function Book(title, author, pages, read){
     this.read = read
 }
 
-function addBookToLibrary(){
-    myLibrary.push(new Book(prompt("Title of book: "), prompt("Author of book:"), prompt("Number of pages:"), prompt("Have you read the book?")));
+function addBookToLibrary(newTitle, newAuthor, newPages, newRead){
+    myLibrary.push(new Book(newTitle, newAuthor, newPages, newRead));
     displayUpdate();
 }
 
@@ -118,9 +118,20 @@ function closeForm(){
 
 function openForm(){
     const form = document.querySelector('.form-popup');
-    console.log(addBook);
     form.classList.remove('closed-form');
     form.classList.add('open-form');
     addBook.classList.remove('closed');
     addBook.classList.add('open');
 }
+
+let newBook = document.getElementById("new-book");
+newBook.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let pages = document.getElementById("pages").value;
+    let read = document.getElementById("read-status").checked;
+    addBookToLibrary(title, author, pages, read);
+    newBook.reset();
+    closeForm();
+});

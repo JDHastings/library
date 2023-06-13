@@ -38,8 +38,12 @@ header:first-child {
 }
 
 .form-container {
-    position: fixed;
-    top: 120px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 10px;
 }
 
 .form-container>button {
@@ -113,9 +117,33 @@ button:hover {
 }
 
 .container-form {
-    max-width: 300px;
+    width: 400px;
     padding: 10px;
     background-color: white;
+    border-radius: 15px;
+    display: grid;
+    grid-template: repeat(5, 1fr) / 200px 200px;
+    align-items: center;
+    justify-items: center;
+}
+
+input[type=checkbox] {
+    width: 25px;
+    height: 25px;
+}
+
+input {
+    width: 130px;
+    padding: 3px;
+    margin: 0px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+form>button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: stretch;
 }
 
 .closed-form {

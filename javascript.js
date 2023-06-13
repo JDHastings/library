@@ -1,4 +1,4 @@
-let myLibrary = [Book, Book, Book, Book, Book, Book];
+let myLibrary = [];
 let removeButtons = document.querySelectorAll('.remove');
 let readButtons = document.querySelectorAll('.read');
 let unreadButtons = document.querySelectorAll('.unread');

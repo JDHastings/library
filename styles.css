@@ -25,16 +25,25 @@ header:first-child {
 
 .main-content {
     display: grid;
-    grid-template: 100px repeat(auto-fill, 200px) / repeat(5, 1fr);
+    grid-template: 50px repeat(auto-fill, 200px) / repeat(5, 1fr);
     gap: 25px;
     justify-items: center;
     padding: 25px;
 }
 
-.main-content>button {
+.buffer {
     grid-column-start: 1;
     grid-column-end: 6;
     width: 100px;
+}
+
+.form-container {
+    position: fixed;
+    top: 120px;
+}
+
+.form-container>button {
+    border: 1px solid black;
 }
 
 .book {
@@ -97,4 +106,22 @@ button {
 
 button:hover {
     background-color: grey;
+}
+
+.form-popup {
+    display: none;
+}
+
+.container-form {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.closed-form {
+    display: none;
+}
+
+.open-form {
+    display: block;
 }

@@ -18,11 +18,7 @@ function addBookToLibrary(){
 function removeBook(){
     for(let i = 0; i < myLibrary.length; i++){
         if(this.classList.contains(i)){
-            if(!i){
-                myLibrary.splice(i, i + 1);
-            }else{
-                myLibrary.splice(i, i);
-            }
+            myLibrary.splice(i, 1);
             displayUpdate();
         }
     }
@@ -104,4 +100,27 @@ function displayUpdate() {
 const bookContainer = document.querySelector(".main-content");
 
 const addBook = document.querySelector('.add-book');
-addBook.addEventListener('click', addBookToLibrary);
+addBook.addEventListener('click', () => {
+    if(addBook.classList.contains('open')){
+        closeForm();
+    }else{
+        openForm();
+    }
+});
+
+function closeForm(){
+    const form = document.querySelector('.form-popup');
+    form.classList.remove('open-form');
+    form.classList.add('closed-form');
+    addBook.classList.add('closed');
+    addBook.classList.remove('open');
+}
+
+function openForm(){
+    const form = document.querySelector('.form-popup');
+    console.log(addBook);
+    form.classList.remove('closed-form');
+    form.classList.add('open-form');
+    addBook.classList.remove('closed');
+    addBook.classList.add('open');
+}

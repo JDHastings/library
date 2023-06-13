@@ -55,12 +55,32 @@ header:first-child {
     height: 35px;
 }
 
+.author {
+    font-style: italic;
+}
+
 .read {
     background-color: greenyellow;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.read:hover {
+    background-color: darkgreen;
+}
+
+.unread {
+    background-color: pink;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unread:hover {
+    background-color: red;
 }
 
 footer {
